@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RangoCuotaViewDlg" widgetVar="RangoCuotaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewRangoCuotaTitle}">
+            <h:form id="RangoCuotaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{rangoCuotaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewRangoCuotaLabel_idRangoCuota}"/>
+                        <h:outputText value="#{rangoCuotaController.selected.idRangoCuota}" title="#{bundle.ViewRangoCuotaTitle_idRangoCuota}"/>
+                        <h:outputText value="#{bundle.ViewRangoCuotaLabel_cuotas}"/>
+                        <h:outputText value="#{rangoCuotaController.selected.cuotas}" title="#{bundle.ViewRangoCuotaTitle_cuotas}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="RangoCuotaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TipoDeCreditoEditDlg" widgetVar="TipoDeCreditoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTipoDeCreditoTitle}">
+            <h:form id="TipoDeCreditoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tipoDeCreditoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditTipoDeCreditoLabel_idTipoDeCredito}" for="idTipoDeCredito" />
+                        <p:inputText id="idTipoDeCredito" value="#{tipoDeCreditoController.selected.idTipoDeCredito}" title="#{bundle.EditTipoDeCreditoTitle_idTipoDeCredito}" required="true" requiredMessage="#{bundle.EditTipoDeCreditoRequiredMessage_idTipoDeCredito}"/>
+                        <p:outputLabel value="#{bundle.EditTipoDeCreditoLabel_nombreTipoDeCredito}" for="nombreTipoDeCredito" />
+                        <p:inputText id="nombreTipoDeCredito" value="#{tipoDeCreditoController.selected.nombreTipoDeCredito}" title="#{bundle.EditTipoDeCreditoTitle_nombreTipoDeCredito}" required="true" requiredMessage="#{bundle.EditTipoDeCreditoRequiredMessage_nombreTipoDeCredito}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tipoDeCreditoController.update}" value="#{bundle.Save}" update="display,:TipoDeCreditoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TipoDeCreditoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TipoDeCreditoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

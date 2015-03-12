@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RegistroClienteCreateDlg" widgetVar="RegistroClienteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateRegistroClienteTitle}">
+            <h:form id="RegistroClienteCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{registroClienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateRegistroClienteLabel_idRegistroCliente}" for="idRegistroCliente" />
+                        <p:inputText id="idRegistroCliente" value="#{registroClienteController.selected.idRegistroCliente}" title="#{bundle.CreateRegistroClienteTitle_idRegistroCliente}" required="true" requiredMessage="#{bundle.CreateRegistroClienteRequiredMessage_idRegistroCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroClienteLabel_cartaLaboral}" for="cartaLaboral" />
+                        <p:inputText id="cartaLaboral" value="#{registroClienteController.selected.cartaLaboral}" title="#{bundle.CreateRegistroClienteTitle_cartaLaboral}" required="true" requiredMessage="#{bundle.CreateRegistroClienteRequiredMessage_cartaLaboral}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroClienteLabel_desprendibleDePago}" for="desprendibleDePago" />
+                        <p:inputText id="desprendibleDePago" value="#{registroClienteController.selected.desprendibleDePago}" title="#{bundle.CreateRegistroClienteTitle_desprendibleDePago}" required="true" requiredMessage="#{bundle.CreateRegistroClienteRequiredMessage_desprendibleDePago}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroClienteLabel_contrato}" for="contrato" />
+                        <p:inputText id="contrato" value="#{registroClienteController.selected.contrato}" title="#{bundle.CreateRegistroClienteTitle_contrato}" required="true" requiredMessage="#{bundle.CreateRegistroClienteRequiredMessage_contrato}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroClienteLabel_declaracionRenta}" for="declaracionRenta" />
+                        <p:inputText id="declaracionRenta" value="#{registroClienteController.selected.declaracionRenta}" title="#{bundle.CreateRegistroClienteTitle_declaracionRenta}" required="true" requiredMessage="#{bundle.CreateRegistroClienteRequiredMessage_declaracionRenta}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroClienteLabel_visitaNegocio}" for="visitaNegocio" />
+                        <p:inputText id="visitaNegocio" value="#{registroClienteController.selected.visitaNegocio}" title="#{bundle.CreateRegistroClienteTitle_visitaNegocio}" required="true" requiredMessage="#{bundle.CreateRegistroClienteRequiredMessage_visitaNegocio}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{registroClienteController.create}" value="#{bundle.Save}" update="display,:RegistroClienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'RegistroClienteCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RegistroClienteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

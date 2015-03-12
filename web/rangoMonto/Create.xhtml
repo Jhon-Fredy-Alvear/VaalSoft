@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RangoMontoCreateDlg" widgetVar="RangoMontoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateRangoMontoTitle}">
+            <h:form id="RangoMontoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{rangoMontoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateRangoMontoLabel_idRangoMonto}" for="idRangoMonto" />
+                        <p:inputText id="idRangoMonto" value="#{rangoMontoController.selected.idRangoMonto}" title="#{bundle.CreateRangoMontoTitle_idRangoMonto}" required="true" requiredMessage="#{bundle.CreateRangoMontoRequiredMessage_idRangoMonto}"/>
+                        <p:outputLabel value="#{bundle.CreateRangoMontoLabel_monto}" for="monto" />
+                        <p:inputText id="monto" value="#{rangoMontoController.selected.monto}" title="#{bundle.CreateRangoMontoTitle_monto}" required="true" requiredMessage="#{bundle.CreateRangoMontoRequiredMessage_monto}"/>
+                        <p:outputLabel value="#{bundle.CreateRangoMontoLabel_fechaDelMonto}" for="fechaDelMonto" />
+                        <p:calendar id="fechaDelMonto" pattern="MM/dd/yyyy" value="#{rangoMontoController.selected.fechaDelMonto}" title="#{bundle.EditRangoMontoTitle_fechaDelMonto}" required="true" requiredMessage="#{bundle.EditRangoMontoRequiredMessage_fechaDelMonto}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateRangoMontoLabel_idRangoCuota}" for="idRangoCuota" />
+                        <p:selectOneMenu id="idRangoCuota" value="#{rangoMontoController.selected.idRangoCuota}" required="true" requiredMessage="#{bundle.EditRangoMontoRequiredMessage_idRangoCuota}">
+                            <f:selectItems value="#{rangoCuotaController.itemsAvailableSelectOne}"
+                                           var="idRangoCuotaItem"
+                                           itemValue="#{idRangoCuotaItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{rangoMontoController.create}" value="#{bundle.Save}" update="display,:RangoMontoListForm:datalist,:growl" oncomplete="handleSubmit(args,'RangoMontoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RangoMontoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

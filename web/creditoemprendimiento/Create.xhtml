@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CreditoemprendimientoCreateDlg" widgetVar="CreditoemprendimientoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateCreditoemprendimientoTitle}">
+            <h:form id="CreditoemprendimientoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{creditoemprendimientoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateCreditoemprendimientoLabel_idCreditoEmprendimiento}" for="idCreditoEmprendimiento" />
+                        <p:inputText id="idCreditoEmprendimiento" value="#{creditoemprendimientoController.selected.idCreditoEmprendimiento}" title="#{bundle.CreateCreditoemprendimientoTitle_idCreditoEmprendimiento}" required="true" requiredMessage="#{bundle.CreateCreditoemprendimientoRequiredMessage_idCreditoEmprendimiento}"/>
+                        <p:outputLabel value="#{bundle.CreateCreditoemprendimientoLabel_ideaNegocio}" for="ideaNegocio" />
+                        <p:inputText id="ideaNegocio" value="#{creditoemprendimientoController.selected.ideaNegocio}" title="#{bundle.CreateCreditoemprendimientoTitle_ideaNegocio}" required="true" requiredMessage="#{bundle.CreateCreditoemprendimientoRequiredMessage_ideaNegocio}"/>
+                        <p:outputLabel value="#{bundle.CreateCreditoemprendimientoLabel_fechaEmprendimiento}" for="fechaEmprendimiento" />
+                        <p:calendar id="fechaEmprendimiento" pattern="MM/dd/yyyy" value="#{creditoemprendimientoController.selected.fechaEmprendimiento}" title="#{bundle.EditCreditoemprendimientoTitle_fechaEmprendimiento}" required="true" requiredMessage="#{bundle.EditCreditoemprendimientoRequiredMessage_fechaEmprendimiento}" showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{creditoemprendimientoController.create}" value="#{bundle.Save}" update="display,:CreditoemprendimientoListForm:datalist,:growl" oncomplete="handleSubmit(args,'CreditoemprendimientoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CreditoemprendimientoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

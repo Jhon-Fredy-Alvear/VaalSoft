@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RegistroClienteViewDlg" widgetVar="RegistroClienteViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewRegistroClienteTitle}">
+            <h:form id="RegistroClienteViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{registroClienteController.selected != null}">
+                        <h:outputText value="#{bundle.ViewRegistroClienteLabel_idRegistroCliente}"/>
+                        <h:outputText value="#{registroClienteController.selected.idRegistroCliente}" title="#{bundle.ViewRegistroClienteTitle_idRegistroCliente}"/>
+                        <h:outputText value="#{bundle.ViewRegistroClienteLabel_cartaLaboral}"/>
+                        <h:outputText value="#{registroClienteController.selected.cartaLaboral}" title="#{bundle.ViewRegistroClienteTitle_cartaLaboral}"/>
+                        <h:outputText value="#{bundle.ViewRegistroClienteLabel_desprendibleDePago}"/>
+                        <h:outputText value="#{registroClienteController.selected.desprendibleDePago}" title="#{bundle.ViewRegistroClienteTitle_desprendibleDePago}"/>
+                        <h:outputText value="#{bundle.ViewRegistroClienteLabel_contrato}"/>
+                        <h:outputText value="#{registroClienteController.selected.contrato}" title="#{bundle.ViewRegistroClienteTitle_contrato}"/>
+                        <h:outputText value="#{bundle.ViewRegistroClienteLabel_declaracionRenta}"/>
+                        <h:outputText value="#{registroClienteController.selected.declaracionRenta}" title="#{bundle.ViewRegistroClienteTitle_declaracionRenta}"/>
+                        <h:outputText value="#{bundle.ViewRegistroClienteLabel_visitaNegocio}"/>
+                        <h:outputText value="#{registroClienteController.selected.visitaNegocio}" title="#{bundle.ViewRegistroClienteTitle_visitaNegocio}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="RegistroClienteViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

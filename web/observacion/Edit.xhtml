@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ObservacionEditDlg" widgetVar="ObservacionEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditObservacionTitle}">
+            <h:form id="ObservacionEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{observacionController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditObservacionLabel_idObservacion}" for="idObservacion" />
+                        <p:inputText id="idObservacion" value="#{observacionController.selected.idObservacion}" title="#{bundle.EditObservacionTitle_idObservacion}" required="true" requiredMessage="#{bundle.EditObservacionRequiredMessage_idObservacion}"/>
+                        <p:outputLabel value="#{bundle.EditObservacionLabel_observacionCliente}" for="observacionCliente" />
+                        <p:inputText id="observacionCliente" value="#{observacionController.selected.observacionCliente}" title="#{bundle.EditObservacionTitle_observacionCliente}" required="true" requiredMessage="#{bundle.EditObservacionRequiredMessage_observacionCliente}"/>
+                        <p:outputLabel value="#{bundle.EditObservacionLabel_fechaObservacion}" for="fechaObservacion" />
+                        <p:calendar id="fechaObservacion" pattern="MM/dd/yyyy" value="#{observacionController.selected.fechaObservacion}" title="#{bundle.EditObservacionTitle_fechaObservacion}" required="true" requiredMessage="#{bundle.EditObservacionRequiredMessage_fechaObservacion}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditObservacionLabel_idTipodeObservacion}" for="idTipodeObservacion" />
+                        <p:selectOneMenu id="idTipodeObservacion" value="#{observacionController.selected.idTipodeObservacion}" required="true" requiredMessage="#{bundle.EditObservacionRequiredMessage_idTipodeObservacion}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{tipoDeObservacionController.itemsAvailableSelectOne}"
+                                           var="idTipodeObservacionItem"
+                                           itemValue="#{idTipodeObservacionItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{observacionController.update}" value="#{bundle.Save}" update="display,:ObservacionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ObservacionEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ObservacionEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

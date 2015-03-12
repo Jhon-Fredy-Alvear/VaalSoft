@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RegistroClienteEditDlg" widgetVar="RegistroClienteEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditRegistroClienteTitle}">
+            <h:form id="RegistroClienteEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{registroClienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditRegistroClienteLabel_idRegistroCliente}" for="idRegistroCliente" />
+                        <p:inputText id="idRegistroCliente" value="#{registroClienteController.selected.idRegistroCliente}" title="#{bundle.EditRegistroClienteTitle_idRegistroCliente}" required="true" requiredMessage="#{bundle.EditRegistroClienteRequiredMessage_idRegistroCliente}"/>
+                        <p:outputLabel value="#{bundle.EditRegistroClienteLabel_cartaLaboral}" for="cartaLaboral" />
+                        <p:inputText id="cartaLaboral" value="#{registroClienteController.selected.cartaLaboral}" title="#{bundle.EditRegistroClienteTitle_cartaLaboral}" required="true" requiredMessage="#{bundle.EditRegistroClienteRequiredMessage_cartaLaboral}"/>
+                        <p:outputLabel value="#{bundle.EditRegistroClienteLabel_desprendibleDePago}" for="desprendibleDePago" />
+                        <p:inputText id="desprendibleDePago" value="#{registroClienteController.selected.desprendibleDePago}" title="#{bundle.EditRegistroClienteTitle_desprendibleDePago}" required="true" requiredMessage="#{bundle.EditRegistroClienteRequiredMessage_desprendibleDePago}"/>
+                        <p:outputLabel value="#{bundle.EditRegistroClienteLabel_contrato}" for="contrato" />
+                        <p:inputText id="contrato" value="#{registroClienteController.selected.contrato}" title="#{bundle.EditRegistroClienteTitle_contrato}" required="true" requiredMessage="#{bundle.EditRegistroClienteRequiredMessage_contrato}"/>
+                        <p:outputLabel value="#{bundle.EditRegistroClienteLabel_declaracionRenta}" for="declaracionRenta" />
+                        <p:inputText id="declaracionRenta" value="#{registroClienteController.selected.declaracionRenta}" title="#{bundle.EditRegistroClienteTitle_declaracionRenta}" required="true" requiredMessage="#{bundle.EditRegistroClienteRequiredMessage_declaracionRenta}"/>
+                        <p:outputLabel value="#{bundle.EditRegistroClienteLabel_visitaNegocio}" for="visitaNegocio" />
+                        <p:inputText id="visitaNegocio" value="#{registroClienteController.selected.visitaNegocio}" title="#{bundle.EditRegistroClienteTitle_visitaNegocio}" required="true" requiredMessage="#{bundle.EditRegistroClienteRequiredMessage_visitaNegocio}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{registroClienteController.update}" value="#{bundle.Save}" update="display,:RegistroClienteListForm:datalist,:growl" oncomplete="handleSubmit(args, 'RegistroClienteEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RegistroClienteEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FiadorViewDlg" widgetVar="FiadorViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewFiadorTitle}">
+            <h:form id="FiadorViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{fiadorController.selected != null}">
+                        <h:outputText value="#{bundle.ViewFiadorLabel_idFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.idFiador}" title="#{bundle.ViewFiadorTitle_idFiador}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_nombreFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.nombreFiador}" title="#{bundle.ViewFiadorTitle_nombreFiador}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_nombreFiador2}"/>
+                        <h:outputText value="#{fiadorController.selected.nombreFiador2}" title="#{bundle.ViewFiadorTitle_nombreFiador2}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_apellidoFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.apellidoFiador}" title="#{bundle.ViewFiadorTitle_apellidoFiador}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_apellidoFiador2}"/>
+                        <h:outputText value="#{fiadorController.selected.apellidoFiador2}" title="#{bundle.ViewFiadorTitle_apellidoFiador2}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_fechaNacimientoFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.fechaNacimientoFiador}" title="#{bundle.ViewFiadorTitle_fechaNacimientoFiador}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_cedulaFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.cedulaFiador}" title="#{bundle.ViewFiadorTitle_cedulaFiador}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_telefonoFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.telefonoFiador}" title="#{bundle.ViewFiadorTitle_telefonoFiador}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_celularFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.celularFiador}" title="#{bundle.ViewFiadorTitle_celularFiador}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_direccionFiador}"/>
+                        <h:outputText value="#{fiadorController.selected.direccionFiador}" title="#{bundle.ViewFiadorTitle_direccionFiador}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_asociadocoomevaFiador}"/>
+                        <p:selectBooleanCheckbox value="#{fiadorController.selected.asociadocoomevaFiador}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_idBarrio}"/>
+                        <h:outputText value="#{fiadorController.selected.idBarrio}" title="#{bundle.ViewFiadorTitle_idBarrio}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_idCiudad}"/>
+                        <h:outputText value="#{fiadorController.selected.idCiudad}" title="#{bundle.ViewFiadorTitle_idCiudad}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_idDepartamento}"/>
+                        <h:outputText value="#{fiadorController.selected.idDepartamento}" title="#{bundle.ViewFiadorTitle_idDepartamento}"/>
+                        <h:outputText value="#{bundle.ViewFiadorLabel_idGenero}"/>
+                        <h:outputText value="#{fiadorController.selected.idGenero}" title="#{bundle.ViewFiadorTitle_idGenero}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="FiadorViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

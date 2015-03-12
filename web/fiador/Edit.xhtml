@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FiadorEditDlg" widgetVar="FiadorEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditFiadorTitle}">
+            <h:form id="FiadorEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{fiadorController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_idFiador}" for="idFiador" />
+                        <p:inputText id="idFiador" value="#{fiadorController.selected.idFiador}" title="#{bundle.EditFiadorTitle_idFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_idFiador}"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_nombreFiador}" for="nombreFiador" />
+                        <p:inputText id="nombreFiador" value="#{fiadorController.selected.nombreFiador}" title="#{bundle.EditFiadorTitle_nombreFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_nombreFiador}"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_nombreFiador2}" for="nombreFiador2" />
+                        <p:inputText id="nombreFiador2" value="#{fiadorController.selected.nombreFiador2}" title="#{bundle.EditFiadorTitle_nombreFiador2}" />
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_apellidoFiador}" for="apellidoFiador" />
+                        <p:inputText id="apellidoFiador" value="#{fiadorController.selected.apellidoFiador}" title="#{bundle.EditFiadorTitle_apellidoFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_apellidoFiador}"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_apellidoFiador2}" for="apellidoFiador2" />
+                        <p:inputText id="apellidoFiador2" value="#{fiadorController.selected.apellidoFiador2}" title="#{bundle.EditFiadorTitle_apellidoFiador2}" />
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_fechaNacimientoFiador}" for="fechaNacimientoFiador" />
+                        <p:calendar id="fechaNacimientoFiador" pattern="MM/dd/yyyy" value="#{fiadorController.selected.fechaNacimientoFiador}" title="#{bundle.EditFiadorTitle_fechaNacimientoFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_fechaNacimientoFiador}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_cedulaFiador}" for="cedulaFiador" />
+                        <p:inputText id="cedulaFiador" value="#{fiadorController.selected.cedulaFiador}" title="#{bundle.EditFiadorTitle_cedulaFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_cedulaFiador}"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_telefonoFiador}" for="telefonoFiador" />
+                        <p:inputText id="telefonoFiador" value="#{fiadorController.selected.telefonoFiador}" title="#{bundle.EditFiadorTitle_telefonoFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_telefonoFiador}"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_celularFiador}" for="celularFiador" />
+                        <p:inputText id="celularFiador" value="#{fiadorController.selected.celularFiador}" title="#{bundle.EditFiadorTitle_celularFiador}" />
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_direccionFiador}" for="direccionFiador" />
+                        <p:inputText id="direccionFiador" value="#{fiadorController.selected.direccionFiador}" title="#{bundle.EditFiadorTitle_direccionFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_direccionFiador}"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_asociadocoomevaFiador}" for="asociadocoomevaFiador" />
+                        <p:selectBooleanCheckbox id="asociadocoomevaFiador" value="#{fiadorController.selected.asociadocoomevaFiador}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_asociadocoomevaFiador}"/>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_idBarrio}" for="idBarrio" />
+                        <p:selectOneMenu id="idBarrio" value="#{fiadorController.selected.idBarrio}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_idBarrio}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{barrioController.itemsAvailableSelectOne}"
+                                           var="idBarrioItem"
+                                           itemValue="#{idBarrioItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_idCiudad}" for="idCiudad" />
+                        <p:selectOneMenu id="idCiudad" value="#{fiadorController.selected.idCiudad}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_idCiudad}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{ciudadController.itemsAvailableSelectOne}"
+                                           var="idCiudadItem"
+                                           itemValue="#{idCiudadItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_idDepartamento}" for="idDepartamento" />
+                        <p:selectOneMenu id="idDepartamento" value="#{fiadorController.selected.idDepartamento}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_idDepartamento}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{departamentoController.itemsAvailableSelectOne}"
+                                           var="idDepartamentoItem"
+                                           itemValue="#{idDepartamentoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditFiadorLabel_idGenero}" for="idGenero" />
+                        <p:selectOneMenu id="idGenero" value="#{fiadorController.selected.idGenero}" required="true" requiredMessage="#{bundle.EditFiadorRequiredMessage_idGenero}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{generoController.itemsAvailableSelectOne}"
+                                           var="idGeneroItem"
+                                           itemValue="#{idGeneroItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{fiadorController.update}" value="#{bundle.Save}" update="display,:FiadorListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FiadorEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FiadorEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

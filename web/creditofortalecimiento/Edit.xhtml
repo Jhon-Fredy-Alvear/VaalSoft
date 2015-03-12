@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CreditofortalecimientoEditDlg" widgetVar="CreditofortalecimientoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCreditofortalecimientoTitle}">
+            <h:form id="CreditofortalecimientoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{creditofortalecimientoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCreditofortalecimientoLabel_idCreditoFortalecimiento}" for="idCreditoFortalecimiento" />
+                        <p:inputText id="idCreditoFortalecimiento" value="#{creditofortalecimientoController.selected.idCreditoFortalecimiento}" title="#{bundle.EditCreditofortalecimientoTitle_idCreditoFortalecimiento}" required="true" requiredMessage="#{bundle.EditCreditofortalecimientoRequiredMessage_idCreditoFortalecimiento}"/>
+                        <p:outputLabel value="#{bundle.EditCreditofortalecimientoLabel_ideaFortalecimiento}" for="ideaFortalecimiento" />
+                        <p:inputText id="ideaFortalecimiento" value="#{creditofortalecimientoController.selected.ideaFortalecimiento}" title="#{bundle.EditCreditofortalecimientoTitle_ideaFortalecimiento}" required="true" requiredMessage="#{bundle.EditCreditofortalecimientoRequiredMessage_ideaFortalecimiento}"/>
+                        <p:outputLabel value="#{bundle.EditCreditofortalecimientoLabel_antiguedadNegocio}" for="antiguedadNegocio" />
+                        <p:inputText id="antiguedadNegocio" value="#{creditofortalecimientoController.selected.antiguedadNegocio}" title="#{bundle.EditCreditofortalecimientoTitle_antiguedadNegocio}" required="true" requiredMessage="#{bundle.EditCreditofortalecimientoRequiredMessage_antiguedadNegocio}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{creditofortalecimientoController.update}" value="#{bundle.Save}" update="display,:CreditofortalecimientoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CreditofortalecimientoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CreditofortalecimientoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

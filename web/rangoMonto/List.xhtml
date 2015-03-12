@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListRangoMontoTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="RangoMontoListForm">
+                <p:panel header="#{bundle.ListRangoMontoTitle}">
+                    <p:dataTable id="datalist" value="#{rangoMontoController.items}" var="item"
+                                 selectionMode="single" selection="#{rangoMontoController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.idRangoMonto}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRangoMontoTitle_idRangoMonto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idRangoMonto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRangoMontoTitle_monto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.monto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRangoMontoTitle_fechaDelMonto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaDelMonto}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRangoMontoTitle_idRangoCuota}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idRangoCuota}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{rangoMontoController.prepareCreate}" update=":RangoMontoCreateForm" oncomplete="PF('RangoMontoCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":RangoMontoViewForm" oncomplete="PF('RangoMontoViewDialog').show()" disabled="#{empty rangoMontoController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":RangoMontoEditForm" oncomplete="PF('RangoMontoEditDialog').show()" disabled="#{empty rangoMontoController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{rangoMontoController.destroy}" update=":growl,datalist" disabled="#{empty rangoMontoController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

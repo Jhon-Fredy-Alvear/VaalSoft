@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ClienteCreateDlg" widgetVar="ClienteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateClienteTitle}">
+            <h:form id="ClienteCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{clienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idCliente}" for="idCliente" />
+                        <p:inputText id="idCliente" value="#{clienteController.selected.idCliente}" title="#{bundle.CreateClienteTitle_idCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_idCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_nombreCliente}" for="nombreCliente" />
+                        <p:inputText id="nombreCliente" value="#{clienteController.selected.nombreCliente}" title="#{bundle.CreateClienteTitle_nombreCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_nombreCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_nombreCliente2}" for="nombreCliente2" />
+                        <p:inputText id="nombreCliente2" value="#{clienteController.selected.nombreCliente2}" title="#{bundle.CreateClienteTitle_nombreCliente2}" />
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_apellidoCliente}" for="apellidoCliente" />
+                        <p:inputText id="apellidoCliente" value="#{clienteController.selected.apellidoCliente}" title="#{bundle.CreateClienteTitle_apellidoCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_apellidoCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_apellidoCliente2}" for="apellidoCliente2" />
+                        <p:inputText id="apellidoCliente2" value="#{clienteController.selected.apellidoCliente2}" title="#{bundle.CreateClienteTitle_apellidoCliente2}" />
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_fechaNacimientoCliente}" for="fechaNacimientoCliente" />
+                        <p:calendar id="fechaNacimientoCliente" pattern="MM/dd/yyyy" value="#{clienteController.selected.fechaNacimientoCliente}" title="#{bundle.EditClienteTitle_fechaNacimientoCliente}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_fechaNacimientoCliente}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_cedulaCliente}" for="cedulaCliente" />
+                        <p:inputText id="cedulaCliente" value="#{clienteController.selected.cedulaCliente}" title="#{bundle.CreateClienteTitle_cedulaCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_cedulaCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_telefonoCliente}" for="telefonoCliente" />
+                        <p:inputText id="telefonoCliente" value="#{clienteController.selected.telefonoCliente}" title="#{bundle.CreateClienteTitle_telefonoCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_telefonoCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_celularCliente}" for="celularCliente" />
+                        <p:inputText id="celularCliente" value="#{clienteController.selected.celularCliente}" title="#{bundle.CreateClienteTitle_celularCliente}" />
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_direccionCliente}" for="direccionCliente" />
+                        <p:inputText id="direccionCliente" value="#{clienteController.selected.direccionCliente}" title="#{bundle.CreateClienteTitle_direccionCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_direccionCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_emailCliente}" for="emailCliente" />
+                        <p:inputText id="emailCliente" value="#{clienteController.selected.emailCliente}" title="#{bundle.CreateClienteTitle_emailCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_emailCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_cargoEmprendimiento}" for="cargoEmprendimiento" />
+                        <p:inputText id="cargoEmprendimiento" value="#{clienteController.selected.cargoEmprendimiento}" title="#{bundle.CreateClienteTitle_cargoEmprendimiento}" />
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_asociadoCoomeva}" for="asociadoCoomeva" />
+                        <p:selectBooleanCheckbox id="asociadoCoomeva" value="#{clienteController.selected.asociadoCoomeva}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_asociadoCoomeva}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idDepartamento}" for="idDepartamento" />
+                        <p:selectOneMenu id="idDepartamento" value="#{clienteController.selected.idDepartamento}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idDepartamento}">
+                            <f:selectItems value="#{departamentoController.itemsAvailableSelectOne}"
+                                           var="idDepartamentoItem"
+                                           itemValue="#{idDepartamentoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_barrioidBarrio}" for="barrioidBarrio" />
+                        <p:selectOneMenu id="barrioidBarrio" value="#{clienteController.selected.barrioidBarrio}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_barrioidBarrio}">
+                            <f:selectItems value="#{barrioController.itemsAvailableSelectOne}"
+                                           var="barrioidBarrioItem"
+                                           itemValue="#{barrioidBarrioItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idCiudad}" for="idCiudad" />
+                        <p:selectOneMenu id="idCiudad" value="#{clienteController.selected.idCiudad}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idCiudad}">
+                            <f:selectItems value="#{ciudadController.itemsAvailableSelectOne}"
+                                           var="idCiudadItem"
+                                           itemValue="#{idCiudadItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idCreditoEmprendimiento}" for="idCreditoEmprendimiento" />
+                        <p:selectOneMenu id="idCreditoEmprendimiento" value="#{clienteController.selected.idCreditoEmprendimiento}" >
+                            <f:selectItems value="#{creditoemprendimientoController.itemsAvailableSelectOne}"
+                                           var="idCreditoEmprendimientoItem"
+                                           itemValue="#{idCreditoEmprendimientoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idCreditoFortalecimiento}" for="idCreditoFortalecimiento" />
+                        <p:selectOneMenu id="idCreditoFortalecimiento" value="#{clienteController.selected.idCreditoFortalecimiento}" >
+                            <f:selectItems value="#{creditofortalecimientoController.itemsAvailableSelectOne}"
+                                           var="idCreditoFortalecimientoItem"
+                                           itemValue="#{idCreditoFortalecimientoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idEmpresa}" for="idEmpresa" />
+                        <p:selectOneMenu id="idEmpresa" value="#{clienteController.selected.idEmpresa}" >
+                            <f:selectItems value="#{empresaController.itemsAvailableSelectOne}"
+                                           var="idEmpresaItem"
+                                           itemValue="#{idEmpresaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idRegistroCliente}" for="idRegistroCliente" />
+                        <p:selectOneMenu id="idRegistroCliente" value="#{clienteController.selected.idRegistroCliente}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idRegistroCliente}">
+                            <f:selectItems value="#{registroClienteController.itemsAvailableSelectOne}"
+                                           var="idRegistroClienteItem"
+                                           itemValue="#{idRegistroClienteItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idFiador}" for="idFiador" />
+                        <p:selectOneMenu id="idFiador" value="#{clienteController.selected.idFiador}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idFiador}">
+                            <f:selectItems value="#{fiadorController.itemsAvailableSelectOne}"
+                                           var="idFiadorItem"
+                                           itemValue="#{idFiadorItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idGenero}" for="idGenero" />
+                        <p:selectOneMenu id="idGenero" value="#{clienteController.selected.idGenero}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idGenero}">
+                            <f:selectItems value="#{generoController.itemsAvailableSelectOne}"
+                                           var="idGeneroItem"
+                                           itemValue="#{idGeneroItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idObservacion}" for="idObservacion" />
+                        <p:selectOneMenu id="idObservacion" value="#{clienteController.selected.idObservacion}" >
+                            <f:selectItems value="#{observacionController.itemsAvailableSelectOne}"
+                                           var="idObservacionItem"
+                                           itemValue="#{idObservacionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idRangoMonto}" for="idRangoMonto" />
+                        <p:selectOneMenu id="idRangoMonto" value="#{clienteController.selected.idRangoMonto}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idRangoMonto}">
+                            <f:selectItems value="#{rangoMontoController.itemsAvailableSelectOne}"
+                                           var="idRangoMontoItem"
+                                           itemValue="#{idRangoMontoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idRegional}" for="idRegional" />
+                        <p:selectOneMenu id="idRegional" value="#{clienteController.selected.idRegional}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idRegional}">
+                            <f:selectItems value="#{regionalController.itemsAvailableSelectOne}"
+                                           var="idRegionalItem"
+                                           itemValue="#{idRegionalItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idSalario}" for="idSalario" />
+                        <p:selectOneMenu id="idSalario" value="#{clienteController.selected.idSalario}" >
+                            <f:selectItems value="#{salarioController.itemsAvailableSelectOne}"
+                                           var="idSalarioItem"
+                                           itemValue="#{idSalarioItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idTipoDeCredito}" for="idTipoDeCredito" />
+                        <p:selectOneMenu id="idTipoDeCredito" value="#{clienteController.selected.idTipoDeCredito}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idTipoDeCredito}">
+                            <f:selectItems value="#{tipoDeCreditoController.itemsAvailableSelectOne}"
+                                           var="idTipoDeCreditoItem"
+                                           itemValue="#{idTipoDeCreditoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{clienteController.create}" value="#{bundle.Save}" update="display,:ClienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'ClienteCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ClienteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

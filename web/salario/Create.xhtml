@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SalarioCreateDlg" widgetVar="SalarioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateSalarioTitle}">
+            <h:form id="SalarioCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{salarioController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateSalarioLabel_idSalario}" for="idSalario" />
+                        <p:inputText id="idSalario" value="#{salarioController.selected.idSalario}" title="#{bundle.CreateSalarioTitle_idSalario}" required="true" requiredMessage="#{bundle.CreateSalarioRequiredMessage_idSalario}"/>
+                        <p:outputLabel value="#{bundle.CreateSalarioLabel_salario}" for="salario" />
+                        <p:inputText id="salario" value="#{salarioController.selected.salario}" title="#{bundle.CreateSalarioTitle_salario}" required="true" requiredMessage="#{bundle.CreateSalarioRequiredMessage_salario}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{salarioController.create}" value="#{bundle.Save}" update="display,:SalarioListForm:datalist,:growl" oncomplete="handleSubmit(args,'SalarioCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="SalarioCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
