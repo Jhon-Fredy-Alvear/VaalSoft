@@ -1,0 +1,34 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Barrio</title>
+    </h:head>
+
+    <h:body>
+            <h:form>
+                <h:panelGrid columns="2" rendered="#{barrioController.selected != null}">
+                
+        
+             
+                <h:outputLabel  value="codigoBarrio" />
+                <h:inputText id="codigoBarrio" 
+                             value="#{barrioController.selected.idBarrio}"
+                             title="codigo" />
+             <h:outputLabel  value="nombreBarrio"/>
+             <h:inputText id="nombreBarrrio" 
+                          value="#{barrioController.selected.barrio}"
+                          required="true" title="nombre"/>
+             
+        <br/>
+        </h:panelGrid> 
+        <h:commandButton id="crear1"  actionListener="#{barrioController.create}" value="crear" />
+        <h:commandButton id="Nuevo"   value="Nuevo" actionListener="#{barrioController.prepareCreate}"/>
+                            
+        </h:form>
+      
+        
+    </h:body>
+
+</html>
+

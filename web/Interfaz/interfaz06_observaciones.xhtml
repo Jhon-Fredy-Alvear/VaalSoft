@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        
+        <title>VaalSoft | Documentación</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <link rel="StyleSheet" href="css/estilo.css" type="text/css" media="screen"/>
+        <link rel="shortcut icon"  href="Iconos/vaalsoftlogo.png"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="js/script.js"></script>
+        <!--Link calendaro-->
+        <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/calendario.css"/>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/calendario.js"></script>
+        <script type="text/javascript" src="js/funcioncalendario.js"></script>
+        <script type="text/javascript"></script>
+
+    </head>
+
+    <!--este abre cuerpo y da imagen de fondo-->
+    <body background="Iconos/fondo.png">
+        <div class="bannerA">
+            <!--Titulo-->
+            <img src="Iconos/logocoomeva1.png"/>
+            <a href="http://softwarevaalsoft.hol.es"  target="_blank" title="Visita nuestra pagina y contáctenos!"><img src="Iconos/vaalsoft.png" align="right" alt="nombre" border="0"/></a> 
+        </div>
+
+        <!--tabla de menu-->
+        <div class="bannerI">
+            <br></br>
+            <br></br>
+            <center><a href="interfaz02_bienvenido.html" title="Inicio"><img src="Iconos/house.png"/></a>
+                <a href="interfaz13_ambiental.html" title="Medio Ambiente"><img src="Iconos/tree.png"/></a>
+                <a href="https://www.facebook.com/vaalsoft" title="Ayuda!" target="_blank"><img src="Iconos/info.png"/></a></center>
+
+            <br></br>
+            <center><h3>Menú</h3></center>
+            <br></br>
+            <!--Menu y botones con vinculos-->
+            <div id='cssmenu'>
+                <ul>
+                    <li class='active'><a href='interfaz03_consultarcliente'><span><img src="Iconos/consultar.png"/> Consultar cliente</span></a></li>
+                    <li class='has-sub'><a href=''><span><img src="Iconos/client.png"/> Registrar cliente</span></a>
+                        <ul>
+                            <li><a href='interfaz07_fortalecimiento'><span>Fortalecimiento</span></a></li>
+                            <li><a href='interfaz08_emprendimiento'><span>Emprendimiento</span></a></li>     
+                        </ul>
+                    </li>
+                    <li class='last'><a href='interfaz12_registrar_administrador'><span><img src="Iconos/create1.png"/> Registrar usuario</span></a></li>
+                    <li class='last'><a href=''><span><img src="Iconos/question58.png"/> Ayuda</span></a></li>
+                    <li class='last'><a href='interfaz01_inicio'><span><img src="Iconos/power7.png"/> Salir</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <form action="sebas1.html" method="post" id="for"/>
+
+        <!--consultar cliente -->
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <center><font face=" Berlin Sans FBBerlin Sans FB"><h1>Consultar cliente <br></br>Observacion</h1></font></center>
+
+
+        <div class="datagrid"><table bgcolor="white">
+                <thead><tr><th>N°</th><th>Tipo</th><th>Descripcion</th><th>Fecha</th><th>Agregar</th><th>Eliminar</th></tr></thead>
+
+                <tbody><tr><td>1</td><td>
+                            <select  name="tipobusqueda" Id="tipobusqueda" placeholder="Seleccione tipo busqueda...">
+                                <option  selected="selected"></option>
+                                <option>Peticiones</option>
+                                <option>Quejas</option>
+                                <option>Reclamos</option>
+                                <option>Sugerencias</option>
+                                <option>Felicitaciones</option>
+                            </select>
+                        </td><td><textarea name="comentarios" rows="4s" cols="30" placeholder="Observación..."></textarea>
+                        </td><td> <input type="text" name="fecha1" id="fecha1"/><br/> 
+                        </td><td><button type="button" class="botondocumentacion"><img src="Iconos/check.png"/></button></td>
+                        <td><button type="button" class="botondocumentacion"><img src="Iconos/eliminar.png"/></button></td></tr></tbody>
+
+                <tr class="alt"><td>2</td><td>
+                        <select  name="tipobusqueda" Id="tipobusqueda" placeholder="Seleccione tipo busqueda...">
+                            <option  selected="selected"></option>
+                            <option>Peticiones</option>
+                            <option>Quejas</option>
+                            <option>Reclamos</option>
+                            <option>Sugerencias</option>
+                            <option>Felicitaciones</option>
+                        </select>
+                    </td><td><textarea name="comentarios" rows="4s" cols="30" placeholder="Observación..."></textarea>
+                    </td><td> <input type="text" name="fecha2" id="fecha2"/><br/>
+                    </td><td><button type="button" class="botondocumentacion"><img src="Iconos/check.png"/></button></td>
+                    <td><button type="button" class="botondocumentacion"><img src="Iconos/eliminar.png"/></button></td></tr>
+
+
+                <tbody><tr><td>3</td><td>
+                            <select  name="tipobusqueda" Id="tipobusqueda" placeholder="Seleccione tipo busqueda...">
+                                <option  selected="selected"></option>
+                                <option>Peticiones</option>
+                                <option>Quejas</option>
+                                <option>Reclamos</option>
+                                <option>Sugerencias</option>
+                                <option>Felicitaciones</option>
+                            </select>
+                        </td><td><textarea name="comentarios" rows="4s" cols="30" placeholder="Observación..."></textarea>
+                        </td><td> <input type="text" name="fecha3" id="fecha3"/><br/> 
+                        </td><td><button type="button" class="botondocumentacion"><img src="Iconos/check.png"/></button></td>
+                        <td><button type="button" class="botondocumentacion"><img src="Iconos/eliminar.png"/></button></td></tr></tbody>
+
+                <tr class="alt"><td>4</td><td>
+                        <select  name="tipobusqueda" Id="tipobusqueda" placeholder="Seleccione tipo busqueda...">
+                            <option  selected="selected"></option>
+                            <option>Peticiones</option>
+                            <option>Quejas</option>
+                            <option>Reclamos</option>
+                            <option>Sugerencias</option>
+                            <option>Felicitaciones</option>
+                        </select>
+                    </td><td><textarea name="comentarios" rows="4s" cols="30" placeholder="Observación..."></textarea>
+                    </td><td> <input type="text" name="fecha4" id="fecha4"/><br/>
+                    </td><td><button type="button" class="botondocumentacion"><img src="Iconos/check.png"/></button></td>
+                    <td><button type="button" class="botondocumentacion"><img src="Iconos/eliminar.png"/></button></td></tr>
+
+
+                <tbody><tr><td>5</td><td>
+                            <select  name="tipobusqueda" Id="tipobusqueda" placeholder="Seleccione tipo busqueda...">
+                                <option  selected="selected"></option>
+                                <option>Peticiones</option>
+                                <option>Quejas</option>
+                                <option>Reclamos</option>
+                                <option>Sugerencias</option>
+                                <option>Felicitaciones</option>
+                            </select>
+                        </td><td><textarea name="comentarios" rows="4s" cols="30" placeholder="Observación..."></textarea>
+                        </td><td> <input type="text" name="fecha5" id="fecha5"/><br/>
+                        </td><td><button type="button" class="botondocumentacion"><img src="Iconos/check.png"/></button></td>
+                        <td><button type="button" class="botondocumentacion"><img src="Iconos/eliminar.png"/></button></td></tr>
+                </tbody>
+
+
+            </table>
+        </div>
+
+    </body>
+</html>

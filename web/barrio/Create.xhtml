@@ -6,7 +6,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition>
+  
 
         <p:dialog id="BarrioCreateDlg" widgetVar="BarrioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateBarrioTitle}">
             <h:form id="BarrioCreateForm">
@@ -17,11 +17,10 @@
                         <p:outputLabel value="#{bundle.CreateBarrioLabel_barrio}" for="barrio" />
                         <p:inputText id="barrio" value="#{barrioController.selected.barrio}" title="#{bundle.CreateBarrioTitle_barrio}" required="true" requiredMessage="#{bundle.CreateBarrioRequiredMessage_barrio}"/>
                     </p:panelGrid>
+                    
                     <p:commandButton actionListener="#{barrioController.create}" value="#{bundle.Save}" update="display,:BarrioListForm:datalist,:growl" oncomplete="handleSubmit(args,'BarrioCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="BarrioCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
-
-    </ui:composition>
 </html>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+      <h:head>
+        <title>VaalSoft | Inicio</title>
+        <meta jsf:="meta" charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link  rel="shortcut icon"  href="Iconos/vaalsoftlogo.png"/>
+        <!-- Start WOWSlider.com HEAD section -->
+        <link rel="StyleSheet" href="css/estilo.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="engine1/style.css" type="text/css"/>
+        <script type="text/javascript" src="engine1/jquery.js"></script>
+        <script type="text/javascript" src="engine1/wowslider.js"></script>
+        <script type="text/javascript" src="engine1/script.js"></script>
+        <script src="js/funciones.js"></script>
+        <!-- End WOWSlider.com HEAD section -->
+    </h:head>
+    <h:body>
+        
+        <div class="bannerA">
+            <form jsf:id="form"  action="interfaz02_bienvenido" method="post" id="for" >
+
+            <!--Tabla inicio sesion-->
+            <table jsf:id="table" border="0" bgcolor="" align="right">               
+                <tr>
+                    <td><input id="emailEmpleado" value="#{empleadoController.selected.emailEmpleado}"
+                               type="text" class="iniciarsesion" name="user" placeholder="Usuario" /></td>
+                    <td><input id="contraseniaEmpleado" value="#{empleadoController.selected.contraseniaEmpleado}" 
+                               type="password" class="iniciarsesion" name="pass" placeholder="Contraseña" /></td>
+                    <td><input type="button" class="botoniniciar" value="Iniciar"  onclick="pasuser(this.form);"/></td>
+                    
+                   
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="http://softwarevaalsoft.hol.es" target="_blank">Olvidastes tu contraseña?</a></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+<!--LOGO COOMEVA-->
+        <img jsf:id="img" src="Iconos/logocoomeva1.gif" class="ocultar" />
+        </div>
+        
+
+ 
+        
+        <!--Banner pie de pagina-->
+        <div class="bannerAb">
+            <table border="1" bgcolor="" align="right">
+                <tr>
+                    <td><a href="http://softwarevaalsoft.hol.es" target="_blank"><img src="Iconos/vaalsoft.png"/></a></td>
+                    <td><center><font size="2" color="white">www.softwarevaalsoft.hol.es</font></center></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"><font size="2" color="white">VaalSoft© 2014-2015 Todos los derechos reservados.</font></td>
+                </tr>
+            </table>
+        </div>
+    </h:body>
+</html>
+

@@ -1,73 +1,325 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
 
-        <meta charset="utf-8"/>
+       
+        <h:head>
+            <title>VaalSoft | Fortalecimiento</title>
+            <meta jsf:id="meta" charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <link rel="StyleSheet" href="css/estilo.css" type="text/css" media="screen"/>
+            <link rel="shortcut icon"  href="Iconos/vaalsoftlogo.png"/>
+            <link rel="stylesheet" href="css/styles.css"/>
+            <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+            <script src="JS/script.js"></script>
+            <!--Link calendaro-->
+            <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+            <link rel="stylesheet" type="text/css" href="css/calendario.css"/>
+            <script type="text/javascript" src="JS/jquery.js"></script>
+            <script type="text/javascript" src="JS/calendario.js"></script>
+            <script type="text/javascript" src="JS/funcioncalendario.js"></script>
+            <script type="text/javascript"></script>
+        </h:head>
 
-        <link rel="StyleSheet" href="css/estilo.css" type="text/css" media="screen"/>
 
-        <!--Estilos del menu desplegable-->
-        <link rel="shortcut icon"  href="Iconos/vaalsoftlogo.png"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="styles.css"/>
-        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-        <script src="JS/script.js"></script>
-        
-        
-
-        <!--Link calendaro-->
-        <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
-        <link rel="stylesheet" type="text/css" href="css/calendario.css"/>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/calendario.js"></script>
-        <script type="text/javascript">
+        <!--este abre cuerpo y da imagen de fondo-->
+        <body jsf:id="body" background="iconos/fondo.png">
             
+            <h:form>
+                
 
-            $(function () {
-                $("#fecha3").datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    showOn: "button",
-                    buttonImage: "css/images/ico.png",
-                    buttonImageOnly: true,
-                    showButtonPanel: true,
-                })
-            })
-            $(function () {
-                $("#fecha4").datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    showOn: "button",
-                    buttonImage: "css/images/ico.png",
-                    buttonImageOnly: true,
-                    showButtonPanel: true,
-                })
-            })
-                </script>
-        
-    </head>
-    <body background="Iconos/fondo.png">
-        
-        <div id="bannerA">
+            <div jsf:id="div" class="bannerA">
+
+                <!--Titulo-->
+                <img jsf:id="img" src="Iconos/logocoomeva1.png"/>
+                <a jsf:id="a" href="http://softwarevaalsoft.wix.com/vaalsoft"  
+                   target="_blank" title="Visita nuestra pagina y contactenos!"><img 
+                        src="Iconos/vaalsoft.png" align="right" alt="nombre" border="0"/></a> 
+
+            </div>
+            <!--tabla de menu-->
+
+            <div class="bannerI">
+                <br></br>
+                <br></br>
+                <center><a jsf:id="href" href="interfaz02_bienvenido.xhtml" title="Inicio"><img src="Iconos/house.png"/></a>
+                    <a href="interfaz13_ambiental.xhtml" title="Medio Ambiente"><img src="Iconos/tree.png"/></a>
+                    <a href="https://www.facebook.com/vaalsoft" title="Ayuda!" 
+                       target="_blank"><img src="Iconos/info.png"/></a></center>
+
+                <br></br>
+                <center><h3>Menú</h3></center>
+                <br></br>
+                <!--Menu y botones con vinculos-->
+                <div id='cssmenu'>
+                    <ul>
+                        <li class='last'><a href='interfaz03_consultarcliente.xhtml'><span>
+                                    <img src="Iconos/consultar.png"/> Consultar cliente</span></a></li>
+                        <li class='has-sub active'><a href=''>
+                                <span><img src="Iconos/client.png"/> Registrar cliente</span></a>
+                            <ul>
+                                <li><a href='interfaz07_fortalecimiento.xhtml'><span>Fortalecimiento</span></a></li>
+                                <li><a href='interfaz08_emprendimiento.xhtml'><span>Emprendimiento</span></a></li>     
+                            </ul>
+                        </li>
+                        <li class='last'><a href='interfaz12_registrar_administrador.xhtml'>
+                                <span><img src="Iconos/create1.png"/> Registrar usuario</span></a></li>
+                        <li class='last'><a href=''><span><img src="Iconos/question58.png"/> Ayuda</span></a></li>
+                        <li class='last'><a href='interfaz01_inicio.xhtml'>
+                                <span><img src="Iconos/power7.png"/> Salir</span></a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <form action="interfaz02_codeudor.xhtml" method="post" id="for"/>
+
+            <!--consultar cliente -->
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <center><font face=" Berlin Sans FBBerlin Sans FB">
+                    <h1>Registrar cliente <br></br> Idea de emprendimiento</h1></font></center>
             
+           
 
 
-            <!--Titulo-->
-            <img src="Iconos/logocoomeva1.png"/>
-            <a href="http://softwarevaalsoft.wix.com/vaalsoft"  target="_blank" title="Visita nuestra pagina y contactenos!"><img src="Iconos/vaalsoft.png" align="right" alt="nombre" border="0"/></a> 
+            <center><h:panelGrid id="panel" columns="3" rendered="#{clienteController.selected != null}">
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idCliente}" />
+                        <h:inputText id="Cliente" value="#{clienteController.selected.idCliente}" 
+                                     title="#{bundle.CreateClienteTitle_idCliente}" 
+                                     required="true" 
+                                     requiredMessage="#{bundle.CreateClienteRequiredMessage_idCliente}"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_nombreCliente}"  />
+                        <h:inputText id="nombreC" 
+                                     value="#{clienteController.selected.nombreCliente}" 
+                                     title="#{bundle.CreateClienteTitle_nombreCliente}" 
+                                     required="true" 
+                                     requiredMessage="#{bundle.CreateClienteRequiredMessage_nombreCliente}"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_nombreCliente2}"  />
+                        <h:inputText id="nombreC2" 
+                                     value="#{clienteController.selected.nombreCliente2}" 
+                                     title="#{bundle.CreateClienteTitle_nombreCliente2}" />
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_apellidoCliente}"/>
+                        <h:inputText id="apellidoCliente" 
+                                     value="#{clienteController.selected.apellidoCliente}" 
+                                     title="#{bundle.CreateClienteTitle_apellidoCliente}" 
+                                     required="true" 
+                                     requiredMessage="#{bundle.CreateClienteRequiredMessage_apellidoCliente}"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_apellidoCliente2}"  />
+                        <h:inputText id="apellidoC2" 
+                                     value="#{clienteController.selected.apellidoCliente2}" 
+                                     title="#{bundle.CreateClienteTitle_apellidoCliente2}" />
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_fechaNacimientoCliente}" />
+                        <p:calendar id="fechaNacimientoC" class="desplegable" 
+                                    pattern="MM/dd/yyyy" 
+                                    value="#{clienteController.selected.fechaNacimientoCliente}"
+                                    title="#{bundle.EditClienteTitle_fechaNacimientoCliente}" 
+                                    required="true" 
+                                    requiredMessage="#{bundle.EditClienteRequiredMessage_fechaNacimientoCliente}" 
+                                    showOn="button"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_cedulaCliente}"  />
+                        <h:inputText id="cedulaC"
+                                     value="#{clienteController.selected.cedulaCliente}"
+                                     title="#{bundle.CreateClienteTitle_cedulaCliente}" 
+                                     required="true" 
+                                     requiredMessage="#{bundle.CreateClienteRequiredMessage_cedulaCliente}"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_telefonoCliente}" />
+                        <h:inputText id="telefonoC" 
+                                     value="#{clienteController.selected.telefonoCliente}" 
+                                     title="#{bundle.CreateClienteTitle_telefonoCliente}" 
+                                     required="true" 
+                                     requiredMessage="#{bundle.CreateClienteRequiredMessage_telefonoCliente}"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_celularCliente}"/>
+                        <h:inputText id="celularC" 
+                                     value="#{clienteController.selected.celularCliente}" 
+                                     title="#{bundle.CreateClienteTitle_celularCliente}" />
+                        
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_direccionCliente}"/>
+                        <p:inputText id="direccionC" 
+                                     value="#{clienteController.selected.direccionCliente}" 
+                                     title="#{bundle.CreateClienteTitle_direccionCliente}" 
+                                     required="true" 
+                                     requiredMessage="#{bundle.CreateClienteRequiredMessage_direccionCliente}"/>
+                        
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_emailCliente}"/>
+                        <h:inputText id="emailC" 
+                                     value="#{clienteController.selected.emailCliente}" 
+                                     title="#{bundle.CreateClienteTitle_emailCliente}" 
+                                     required="true" 
+                                     requiredMessage="#{bundle.CreateClienteRequiredMessage_emailCliente}"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_cargoEmprendimiento}"/>
+                        <h:inputText id="cargoEmprendimiento1" 
+                                     value="#{clienteController.selected.cargoEmprendimiento}" 
+                                     title="#{bundle.CreateClienteTitle_cargoEmprendimiento}" />
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_asociadoCoomeva}"/>
+                        <h:selectBooleanCheckbox id="asociadoCoome" 
+                                                 value="#{clienteController.selected.asociadoCoomeva}" 
+                                                 required="true" 
+                                                 requiredMessage="#{bundle.EditClienteRequiredMessage_asociadoCoomeva}"/>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idDepartamento}"/>
+                        <h:selectOneMenu id="Departamento" 
+                                         value="#{clienteController.selected.idDepartamento}" 
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_idDepartamento}">
+                            <f:selectItems value="#{departamentoController.itemsAvailableSelectOne}"
+                                           var="idDepartamentoItem"
+                                           itemValue="#{idDepartamentoItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_barrioidBarrio}"/>
+                        <h:selectOneMenu id="idBarrio" 
+                                         value="#{clienteController.selected.barrioidBarrio}"
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_barrioidBarrio}">
+                            <f:selectItems value="#{barrioController.itemsAvailableSelectOne}"
+                                           var="barrioidBarrioItem"
+                                           itemValue="#{barrioidBarrioItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idCiudad}"/>
+                        <h:selectOneMenu id="Ciudad" 
+                                         value="#{clienteController.selected.idCiudad}" 
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_idCiudad}">
+                            <f:selectItems value="#{ciudadController.itemsAvailableSelectOne}"
+                                           var="idCiudadItem"
+                                           itemValue="#{idCiudadItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idCreditoEmprendimiento}"/>
+                        <h:selectOneMenu id="CreditoEmprendimiento" 
+                                         value="#{clienteController.selected.idCreditoEmprendimiento}" >
+                            <f:selectItems value="#{creditoemprendimientoController.itemsAvailableSelectOne}"
+                                           var="idCreditoEmprendimientoItem"
+                                           itemValue="#{idCreditoEmprendimientoItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idCreditoFortalecimiento}"/>
+                        <h:selectOneMenu id="idCreditoFortalecimiento" 
+                                         value="#{clienteController.selected.idCreditoFortalecimiento}" >
+                            <f:selectItems value="#{creditofortalecimientoController.itemsAvailableSelectOne}"
+                                           var="idCreditoFortalecimientoItem"
+                                           itemValue="#{idCreditoFortalecimientoItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idEmpresa}"/>
+                        <h:selectOneMenu id="Empresa" value="#{clienteController.selected.idEmpresa}" >
+                            <f:selectItems value="#{empresaController.itemsAvailableSelectOne}"
+                                           var="idEmpresaItem"
+                                           itemValue="#{idEmpresaItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idRegistroCliente}"/>
+                        <h:selectOneMenu id="RegistroCliente" 
+                                         value="#{clienteController.selected.idRegistroCliente}" 
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_idRegistroCliente}">
+                            <f:selectItems value="#{registroClienteController.itemsAvailableSelectOne}"
+                                           var="idRegistroClienteItem"
+                                           itemValue="#{idRegistroClienteItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idFiador}"/>
+                        <h:selectOneMenu id="Fiador" 
+                                         value="#{clienteController.selected.idFiador}" 
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_idFiador}">
+                            <f:selectItems value="#{fiadorController.itemsAvailableSelectOne}"
+                                           var="idFiadorItem"
+                                           itemValue="#{idFiadorItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idGenero}"/>
+                        <h:selectOneMenu id="Genero" value="#{clienteController.selected.idGenero}" required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_idGenero}">
+                            <f:selectItems value="#{generoController.itemsAvailableSelectOne}"
+                                           var="idGeneroItem"
+                                           itemValue="#{idGeneroItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idObservacion}"/>
+                        <h:selectOneMenu id="Observacion" 
+                                         value="#{clienteController.selected.idObservacion}" >
+                            <f:selectItems value="#{observacionController.itemsAvailableSelectOne}"
+                                           var="idObservacionItem"
+                                           itemValue="#{idObservacionItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idRangoMonto}"/>
+                        <h:selectOneMenu id="RangoMonto" 
+                                         value="#{clienteController.selected.idRangoMonto}" 
+                                         required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idRangoMonto}">
+                            <f:selectItems value="#{rangoMontoController.itemsAvailableSelectOne}"
+                                           var="idRangoMontoItem"
+                                           itemValue="#{idRangoMontoItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idRegional}"/>
+                        <h:selectOneMenu id="Regional" 
+                                         value="#{clienteController.selected.idRegional}" 
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_idRegional}">
+                            <f:selectItems value="#{regionalController.itemsAvailableSelectOne}"
+                                           var="idRegionalItem"
+                                           itemValue="#{idRegionalItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idSalario}"/>
+                        <h:selectOneMenu id="Salario" value="#{clienteController.selected.idSalario}" >
+                            <f:selectItems value="#{salarioController.itemsAvailableSelectOne}"
+                                           var="idSalarioItem"
+                                           itemValue="#{idSalarioItem}"/>
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="#{bundle.CreateClienteLabel_idTipoDeCredito}"/>
+                        <h:selectOneMenu id="TipoDeCredito" 
+                                         value="#{clienteController.selected.idTipoDeCredito}" 
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditClienteRequiredMessage_idTipoDeCredito}">
+                            <f:selectItems value="#{tipoDeCreditoController.itemsAvailableSelectOne}"
+                                           var="idTipoDeCreditoItem"
+                                           itemValue="#{idTipoDeCreditoItem}"/>
+                        </h:selectOneMenu>
+                        
+                </h:panelGrid></center>
 
-        </div>
-        
-        <div>TODO write content</div>
-    </body>
+            <center><h:commandButton id="nuevo2" actionListener="#{clienteController.prepareCreate}"
+                                         value="Nuevo"   />
+                    <h:commandButton id="guardar3" actionListener="#{clienteController.create}"
+                                     value="guardar" /></center>
+               
+           
+               
+            </h:form>
+        </body>
+
+   
+
+
 </html>
+

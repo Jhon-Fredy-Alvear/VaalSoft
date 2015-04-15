@@ -81,7 +81,7 @@
 
 #wowslider-container1 .ws_images iframe {
 	position: absolute;
-	z-index: 0;
+	z-index: "";
 }
 
 #wowslider-container1 .ws-title > div {

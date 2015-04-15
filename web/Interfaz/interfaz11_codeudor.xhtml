@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>VaalSoft | Bienvenido</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <link rel="StyleSheet" href="css/estilo.css" type="text/css" media="screen"/>
+        <link rel="shortcut icon"  href="Iconos/vaalsoftlogo.png"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="js/script.js"></script>
+        <!--Link calendaro-->
+        <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/calendario.css"/>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/calendario.js"></script>
+        <script type="text/javascript" src="js/funcioncalendario.js"></script>
+        <script type="text/javascript"></script>
+    </head>
+
+    <!--este abre cuerpo y da imagen de fondo-->
+    <body background="iconos/fondo.png">
+        <div id="bannerA">
+
+
+            <!--Titulo-->
+            <img src="Iconos/logocoomeva1.png"/>
+            <a href="http://softwarevaalsoft.wix.com/vaalsoft"  target="_blank" title="Visita nuestra pagina y contactenos!"><img src="Iconos/vaalsoft.png" align="right" alt="nombre" border="0"/></a> 
+
+        </div>
+        <!--tabla de menu-->
+
+        <div id="bannerI">
+            <br></br>
+            <br></br>
+            <center><a href="interfaz02_bienvenido.html" title="Inicio"><img src="Iconos/house.png"/></a>
+                <a href="interfaz13_ambiental.html" title="Medio Ambiente"><img src="Iconos/tree.png"/></a>
+                <a href="https://www.facebook.com/vaalsoft" title="Ayuda!" target="_blank"><img src="Iconos/info.png"/></a></center>
+
+            <br></br>
+            <center><h3>Menú</h3></center>
+            <br></br>
+            <!--Menu y botones con vinculos-->
+            <div id='cssmenu'>
+                <ul>
+                    <li class='last'><a href='interfaz03_consultarcliente.html'><span><img src="Iconos/consultar.png"/> Consultar cliente</span></a></li>
+                    <li class='has-sub'><a href=''><span><img src="Iconos/client.png"/> Registrar cliente</span></a>
+                        <ul>
+                            <li><a href='interfaz07_fortalecimiento.html'><span>Fortalecimiento</span></a></li>
+                            <li><a href='interfaz08_emprendimiento.html'><span>Emprendimiento</span></a></li>     
+                        </ul>
+                    </li>
+                    <li class='last'><a href='interfaz12_registrar_administrador.html'><span><img src="Iconos/create1.png"/> Registrar usuario</span></a></li>
+                    <li class='last'><a href=''><span><img src="Iconos/question58.png"/> Ayuda</span></a></li>
+                    <li class='last'><a href='interfaz01_inicio.html'><span><img src="Iconos/power7.png"/> Salir</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <form action="sebas1.html" method="post" id="for"/>
+
+        <!--interfaz fortalecimiento -->
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
+        <center><font face=" Berlin Sans FBBerlin Sans FB"><h1>Registrar cliente <br></br> Codeudor</h1></font></center>
+        <br></br>
+        <br></br>
+        <center><table border="0">
+                <tr>
+                    <td><center><font size="4" face=" Berlin Sans FBBerlin Sans FB">Datos personales:</font></center>
+                        <hr/>
+                <tr><td><br></br></td></tr>
+                <tr><td><br></br></td></tr>
+                    </td>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td ><label>Nombres: *</label></td>
+                    <td ><label>Apellidos: *</label></td>
+                </tr>
+                <tr>
+                    <td ><input type="text" class="zelda" placeholder="" maxlength="40" required="true" autofocus="true"/><br></br></td>
+                    <td ><input type="text" class="zelda" placeholder="" maxlength="40" required="true"/><br></br></td>
+                </tr>
+                <tr>
+                    <td ><label>Cedula de ciudadanía: *</label></td>
+                    <td ><label>Genero *</label></td>
+                </tr>
+                <tr>
+                    <td ><input type="number" class="zelda" placeholder="" maxlength="10" required="true"/><br></br></td>
+                    <td ><select  name="genero" Id="genero" class="desplegable">
+                            <option selected="selected"></option>
+                            <option>Masculino</option>
+                            <option>Femenino</option>
+                        </select><br></br></td>
+                </tr>
+                <tr>
+                    <td ><label>Correo electrónico: *</label></td>
+                    <td ><label>Fecha de nacimiento: *</label></td>
+                </tr>
+                <tr>
+                    <td ><input type="email" class="zelda" placeholder="" maxlength="450" required="true"/><br></br></td>
+                    <td ><input type="text" class="zelda" name="fecha1" id="fecha1"/><br></br></td>
+                </tr>
+                <tr>
+                    <td ><label>Teléfono fijo: </label></td>
+                    <td ><label>Teléfono celular: *</label></td>
+                </tr>
+                <tr>
+                    <td ><input type="number" class="zelda" placeholder="" maxlength="15" required="true"/><br></br></td>
+                    <td ><input type="number" class="zelda" placeholder="" maxlength="15" required="true"/><br></br></td>
+                </tr>
+                <tr>
+                    <td ><label>Dirección: *</label></td>
+                    <td ><label>Barrio: *</label></td>
+                </tr>
+                <tr>
+                    <td ><input type="text" class="zelda" placeholder="" maxlength="20" required="true"/><br></br></td>
+                    <td ><input type="text" class="zelda" placeholder="" maxlength="20" required="true"/><br></br></td>
+                </tr>
+                <tr>
+                    <td ><label>Ciudad: *</label></td>
+                    <td ><label>Departamento: *</label></td>
+                </tr>
+                <tr>
+                    <td ><input type="text" class="zelda"  placeholder="" maxlength="20" required="true"/><br></br></td>
+                    <td ><input type="text" class="zelda" placeholder="" maxlength="20" required="true"/><br></br></td>
+                </tr>
+                <tr>
+                    <td ><label>¿Asociado a Coomeva?</label></td>
+                    <td ></td>
+                </tr>
+                <tr>
+                    <td ><input type="radio" name="myradio" value="Si"/>Si
+                        <input type="radio" name="myradio" value="No"/>No</td>
+                    <td ></td>
+                </tr>
+                <tr><td><br></br></td></tr>
+                <tr><td><br></br></td></tr>
+                <tr><td><br></br></td></tr>
+                <tr>
+                    <td ><center><input type="submit" class="botonconsultar" value="Registrar"/></center></td>
+                    <td ></td>
+                </tr>
+
+                <tr><td><br></br></td></tr>
+            </table></center>
+
+    </body>
+</html>
+
